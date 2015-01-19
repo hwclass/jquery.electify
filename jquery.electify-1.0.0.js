@@ -16,8 +16,26 @@
  * jQuery Availability : >= 1.7.0
  *
  */
-(function ($) {
-  $.fn.electify = function (options) {
-  	console.log('electify initialized.');
-  };
-})(jQuery);
+ (function ($) {
+   $.fn.electify = function (options) {
+     $(options.main).on('click', function (e) {
+         for (var counter = 0; counter < $('input:checkbox' + options.childrenCheckBoxes).length; counter++) {
+             //typeof attr !== typeof undefined && attr !== false
+             var attrOfCheckBox = $($(options.childrenCheckBoxes).get(counter)).prop('disabled');
+             if (attrOfCheckBox === false) {                       
+                 $($(options.childrenCheckBoxes).get(counter)).prop('disabled', true)
+             } else {
+                 $($(options.childrenCheckBoxes).get(counter)).prop('disabled', false);
+             };
+         };
+         for (var counter = 0; counter < $('input:button' + options.childrenButtons).length; counter++) {
+             var attrOfButton = $($(options.childrenButtons).get(counter)).prop('disabled');
+             if (attrOfButton === false) {                       
+                 $($(options.childrenButtons).get(counter)).prop('disabled', true)
+             } else {
+                 $($(options.childrenButtons).get(counter)).prop('disabled', false);
+             };
+         }
+     });
+   };
+ })(jQuery);
