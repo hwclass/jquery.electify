@@ -22,7 +22,6 @@
          if (typeof options.childrenCheckBoxes !== 'undefined') {
              if ($('input:checkbox' + options.childrenCheckBoxes).length > 0) {
                  for (var counter = 0; counter < $('input:checkbox' + options.childrenCheckBoxes).length; counter++) {
-                     //typeof attr !== typeof undefined && attr !== false
                      var attrOfCheckBox = $($(options.childrenCheckBoxes).get(counter)).prop('checked');
                      if (attrOfCheckBox === false) {                       
                          $($(options.childrenCheckBoxes).get(counter)).prop('checked', true)
