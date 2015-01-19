@@ -23,11 +23,11 @@
              if ($('input:checkbox' + options.childrenCheckBoxes).length > 0) {
                  for (var counter = 0; counter < $('input:checkbox' + options.childrenCheckBoxes).length; counter++) {
                      //typeof attr !== typeof undefined && attr !== false
-                     var attrOfCheckBox = $($(options.childrenCheckBoxes).get(counter)).prop('disabled');
+                     var attrOfCheckBox = $($(options.childrenCheckBoxes).get(counter)).prop('checked');
                      if (attrOfCheckBox === false) {                       
-                         $($(options.childrenCheckBoxes).get(counter)).prop('disabled', true)
+                         $($(options.childrenCheckBoxes).get(counter)).prop('checked', true)
                      } else {
-                         $($(options.childrenCheckBoxes).get(counter)).prop('disabled', false);
+                         $($(options.childrenCheckBoxes).get(counter)).prop('checked', false);
                      };
                  };
              };
@@ -46,3 +46,4 @@
          };
      });
    };
+ })(jQuery);
