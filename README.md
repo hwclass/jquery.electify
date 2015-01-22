@@ -2,7 +2,7 @@
 
 A form element cross-controlling script.
 
-You can get the working example of the plugin <a href="http://jsfiddle.net/utr64kbz/4/" target="_blank">here</a>. 
+You can get the working example of the plugin <a href="http://jsfiddle.net/utr64kbz/7/" target="_blank">here</a>. 
 
 ### usage
 <pre lang="javascript">
