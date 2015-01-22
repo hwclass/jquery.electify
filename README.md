@@ -4,8 +4,6 @@ A form element cross-controlling script.
 
 You can get the working example of the plugin <a href="http://jsfiddle.net/utr64kbz/8/" target="_blank">here</a>.
 
-<iframe width="100%" height="300" src="http://jsfiddle.net/utr64kbz/8/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
 ### usage
 <pre lang="javascript">
 <code>
