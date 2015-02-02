@@ -20,49 +20,49 @@
 	$.fn.electify = function(options) {
 		var allCheckBoxesChecked = false;
 		var allButtonsEnabled = true;
-	$(options.main).on('click', function(e) {
-	if (typeof options.childrenCheckBoxes !== 'undefined') {
-	if ($('input:checkbox' + options.childrenCheckBoxes).length > 0) {
-	for (var counter = 0; counter < $('input:checkbox' + options.childrenCheckBoxes).length; counter++) {
-	var attrOfCheckBox = $($(options.childrenCheckBoxes).get(counter)).prop('checked');
-	if (attrOfCheckBox === false) {
-	$($(options.childrenCheckBoxes).get(counter)).prop('checked', true);
-	allCheckBoxesChecked = true;
-	} else {
-	$($(options.childrenCheckBoxes).get(counter)).prop('checked', false);
-	allCheckBoxesChecked = false;
-	};
-	$($(options.childrenCheckBoxes).get(counter)).change(function() {
-	if (!this.checked) {
-	$(options.main).prop('checked', false);
-	allCheckBoxesChecked = false;
-	} else {
-	if (!allCheckBoxesChecked) {
-	for (var counter = 0; counter < $('input:checkbox' + options.childrenCheckBoxes).length; counter++) {
-	$($(options.childrenCheckBoxes).get(counter)).prop('checked', true);
-	}
-	allCheckBoxesChecked = true;
-	$(options.main).prop('checked', true);
-	}
-	}
-	});
-	};
-	allCheckBoxesChecked = true;
-	};
-	};
-	if (typeof options.childrenButtons !== 'undefined') {
-	if ($('input:button' + options.childrenButtons).length > 0) {
-	for (var counter = 0; counter < $('input:button' + options.childrenButtons).length; counter++) {
-	var attrOfButton = $($(options.childrenButtons).get(counter)).prop('disabled');
-	if (attrOfButton === false) {
-	$($(options.childrenButtons).get(counter)).prop('disabled', true);
-	allButtonsEnabled = false;
-	} else {
-	$($(options.childrenButtons).get(counter)).prop('disabled', false);
-	};
-	}
-	};
-	};
-	});
+		$(options.main).on('click', function(e) {
+			if (typeof options.childrenCheckBoxes !== 'undefined') {
+				if ($('input:checkbox' + options.childrenCheckBoxes).length > 0) {
+					for (var counter = 0; counter < $('input:checkbox' + options.childrenCheckBoxes).length; counter++) {
+						var attrOfCheckBox = $($(options.childrenCheckBoxes).get(counter)).prop('checked');
+						if (attrOfCheckBox === false) {
+							$($(options.childrenCheckBoxes).get(counter)).prop('checked', true);
+							allCheckBoxesChecked = true;
+						} else {
+							$($(options.childrenCheckBoxes).get(counter)).prop('checked', false);
+							allCheckBoxesChecked = false;
+						};
+						$($(options.childrenCheckBoxes).get(counter)).change(function() {
+							if (!this.checked) {
+								$(options.main).prop('checked', false);
+								allCheckBoxesChecked = false;
+							} else {
+								if (!allCheckBoxesChecked) {
+									for (var counter = 0; counter < $('input:checkbox' + options.childrenCheckBoxes).length; counter++) {
+										$($(options.childrenCheckBoxes).get(counter)).prop('checked', true);
+									}
+									allCheckBoxesChecked = true;
+									$(options.main).prop('checked', true);
+								}
+							}
+						});
+					};
+					allCheckBoxesChecked = true;
+				};
+			};
+			if (typeof options.childrenButtons !== 'undefined') {
+				if ($('input:button' + options.childrenButtons).length > 0) {
+					for (var counter = 0; counter < $('input:button' + options.childrenButtons).length; counter++) {
+						var attrOfButton = $($(options.childrenButtons).get(counter)).prop('disabled');
+						if (attrOfButton === false) {
+							$($(options.childrenButtons).get(counter)).prop('disabled', true);
+							allButtonsEnabled = false;
+						} else {
+							$($(options.childrenButtons).get(counter)).prop('disabled', false);
+						};
+					}
+				};
+			};
+		});
 	};
 })(jQuery);
